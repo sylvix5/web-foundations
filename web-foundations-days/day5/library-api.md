@@ -40,39 +40,44 @@ A RESTful API design for managing books in a library system.
 
 - **Method:** `PUT`
 - **Path:** `/api/books/:id`
-- **Description:** Updates all or specific details of an existing book by its ID
+- **Description:** Updates all or specific details of an existing book by its ID.
 - **Request Body Example:**
-
-```json
-{
-  "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
-  "author": "Robert C. Martin",
-  "publishedYear": 2008,
-  "genre": "Software Engineering"
-}
-* **Success Status Code:** `200 OK`
+  ```json
+  {
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "publishedYear": 2008,
+    "genre": "Software Engineering"
+  }
+  ```
+- **Success Status Code:** `200 OK`
 
 ### 5. Delete a Book
-* **Method:** `DELETE`
-* **Path:** `/api/books/:id`
-* **Description:** Removes a book record from the library catalog by its ID.
-* **Request Body:** None
-* **Success Status Code:** `204 No Content`
 
-### 6. List Books by an Author(Query Parameter)
-* **Method:** `GET`
-* **Path:** `/api/books?author=Orwell`
-* **Description:** Filters and retrieves a list of books written by a specific author using query parameters
-* **Request Body:** None
-* **Success Status Code:** `200 OK`
-```
+- **Method:** `DELETE`
+- **Path:** `/api/books/:id`
+- **Description:** Removes a book record from the library catalog by its ID.
+- **Request Body:** None
+- **Success Status Code:** `204 No Content`
 
-### Common Error Codes
+### 6. List Books by an Author (Query Parameter)
 
-- **400 Bad Request**
-- ** When it happens:** Triggered when the client sends malformed JSON syntax or omits required validation fields during a POST or PUT request.
-- **Example:** Sending a POST /api/books request with an empty body or missing the mandatory title and author fields.
+- **Method:** `GET`
+- **Path:** `/api/books?author=Orwell`
+- **Description:** Filters and retrieves a list of books written by a specific author using query parameters.
+- **Request Body:** None
+- **Success Status Code:** `200 OK`
 
-- **404 Not Found**
+---
+
+## Common Error Codes
+
+### `400 Bad Request`
+
+- **When it happens:** Triggered when the client sends malformed JSON syntax or omits required validation fields during a `POST` or `PUT` request.
+- **Example:** Sending a `POST /api/books` request with an empty body or missing the mandatory `title` and `author` fields.
+
+### `404 Not Found`
+
 - **When it happens:** Triggered when the requested resource path or unique identifier does not exist in the server database.
-- **Example:** GET /api/books/99999 for a book ID that has not been created or has already been deleted.
+- **Example:** Requesting `GET /api/books/99999` for a book ID that has not been created or has already been deleted.
