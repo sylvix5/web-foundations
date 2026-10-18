@@ -28,7 +28,7 @@
 - **Page Views per User:** 10 pages/day
 - **Total Daily Page Views:** 50,000 \* 10 = 500,000 page views/day
 - **Average Request Rate (QPS):**
-  - $500,000 	ext{ views} / 86,400 	ext{ seconds} pprox 5.8 	ext{ QPS}$
+  - $500,000 views / 86,400 seconds = **5.8 QPS**$
 - **Ticket Sales (Normal):** 5,000 tickets sold/day
 
 ### Peak Traffic ("Big Sale" Event)
@@ -37,7 +37,7 @@
 - **Surge Volume:** 200,000 eager fans attempt to buy 20,000 seats within the first 10 minutes.
 - **Duration:** 10 minutes = 600 seconds.
 - **Peak Request Rate (QPS):**
-  - $200,000 	ext{ users} / 600 	ext{ seconds} pprox 333 	ext{ requests/second}$ (average burst rate at gateway, with peak spikes potentially hitting 1,000+ QPS during the exact second of release).
+  - $200,000 users / 600 seconds = 333 requests/second$ (average burst rate at gateway, with peak spikes potentially hitting 1,000+ QPS during the exact second of release).
 - **Comparison:** Peak traffic represents roughly a **50x to 100x surge** over normal baseline QPS, heavily concentrating database write operations around seat locks and order placements.
 
 ---
